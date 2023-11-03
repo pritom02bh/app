@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #b2cfc4;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #b2cfc4;
+        }
+
+        .student-data {
+            text-align: center;
+            margin: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        .home-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .home-link i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Student Data</h1>
-    <p>Name: {{ student.name }}</p>
-    <p>class: {{ student.class }}</p>
-    <p>Major: {{ student.major }}</p>
+    <div class="student-data">
+        <h1>Student Data</h1>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Student Number</td>
+                <td>{{ student.student_number }}</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{ student.name }}</td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>{{ student.class }}</td>
+            </tr>
+            <tr>
+                <td>Major</td>
+                <td>{{ student.major }}</td>
+            </tr>
+        </table>
+    </div>
+    <a class="home-link" href="http://127.0.0.1:5000/">
+        <i class="fa fa-home"></i> Home
+    </a>
+    <div class="footer">
+        Developed by Pritom Bhowmik
+    </div>
 </body>
 </html>
