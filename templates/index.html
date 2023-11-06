@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Student and Instructor View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
@@ -14,59 +17,88 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .options {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .options h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .options a {
-            display: block;
-            background-color: #007BFF;
+            background-color: #129d49;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 12px;
             text-decoration: none;
             margin: 10px;
             font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            width: 45%;
         }
 
         .options a:hover {
-            background-color: #0056b3;
+            background-color: #09373a;
+            transform: scale(1.05);
         }
 
         .footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #333;
+            background-color: #09373a;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            animation: slideIn 1s ease-in-out;
         }
 
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="options">
             <h2>Welcome to the Register's Application</h2>
-            <a href="instructor_id.html">Instructor View</a>
-            <a href="student_id.html">Student View</a>
-        </div>
-        <div class="footer">
-            Developed by Pritom Bhowmik
+            <a href="instructor_id.html" class="btn btn-primary">Instructor View</a>
+            <a href="student_id.html" class="btn btn-primary">Student View</a>
+            <a href="grades.html" class="btn btn-primary">Grade View</a>
+            <a href="section_info_input.html" class="btn btn-primary">Section View</a>
+            <a href="prerequisite_info_input.html" class="btn btn-primary">Prerequisite Subject View</a>
+            <a href="course_input.html" class="btn btn-primary">Course Details View</a>
         </div>
     </div>
+    <div class="footer">
+        Developed by Pritom Bhowmik
+    </div>
 </body>
+
 </html>

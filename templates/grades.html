@@ -89,25 +89,6 @@
                 margin-right: 10px;
                 font-size: 24px;
             }
-
-            .course-link {
-                position: absolute;
-                top: 63px;
-                right: 12px;
-                text-decoration: none;
-                background-color: #333;
-                color: #fff;
-                padding: 10px 19px;
-                border-radius: 5px;
-                font-size: 18px;
-                display: flex;
-                align-items: center;
-            }
-    
-            .course-link i {
-                margin-right: 10px;
-                font-size: 24px;
-            }
     
             .footer {
                 position: fixed;
@@ -132,19 +113,16 @@
     </head>
 <body>
     <form method="POST">
-        <label for="student_number">Enter Student Number:</label>
+        <label for="student_number">Enter Student Number to view Grade:</label>
         <input type="text" id="student_number" name="student_number" required>
         <input type="submit" value="Get Data">
     </form>
-    <a class="home-link" href="http://127.0.0.1:5000/">
-        <i class="fa fa-home"></i> Home
-    </a>
-</a>
-<a class="course-link" href="http://127.0.0.1:5000/course_input.html">
-    <i class="fa fa-book"></i> Course
-</a>
     <div class="footer">
         Developed by Pritom Bhowmik
     </div>
+
+    <a class="home-link" href="http://127.0.0.1:5000/">
+        <i class="fa fa-home"></i> Home
+    </a>
 </body>
 </html>

@@ -8,16 +8,16 @@
         }
 
         th, td {
-            border: 1px solid #b2cfc4;
+            border: 3px solid #b2cfc4;
             text-align: left;
-            padding: 10px;
+            padding: 9px;
         }
 
         th {
             background-color: #b2cfc4;
         }
 
-        .student-data {
+        .grades-data {
             text-align: center;
             margin: 15px;
         }
@@ -30,11 +30,11 @@
         .footer {
             position: fixed;
             bottom: 0;
-            width: 100%;
-            background-color: #333;
+            width: 98%;
+            background-color: #09373a;
             color: white;
             text-align: center;
-            padding: 8px 0;
+            padding: 10px 0;
         }
 
         .home-link {
@@ -58,8 +58,8 @@
     </style>
 </head>
 <body>
-    <div class="student-data">
-        <h1>Student Data</h1>
+    <div class="grade-data">
+        <h1>Student Grade</h1>
         <table>
             <tr>
                 <th>Attribute</th>
@@ -67,19 +67,11 @@
             </tr>
             <tr>
                 <td>Student Number</td>
-                <td>{{ student.student_number }}</td>
+                <td>{{ data.student_number }}</td>
             </tr>
             <tr>
-                <td>Name</td>
-                <td>{{ student.name }}</td>
-            </tr>
-            <tr>
-                <td>Class</td>
-                <td>{{ student.class }}</td>
-            </tr>
-            <tr>
-                <td>Major</td>
-                <td>{{ student.major }}</td>
+                <td>Grade</td>
+                <td>{{ data.grade }}</td>
             </tr>
         </table>
     </div>
