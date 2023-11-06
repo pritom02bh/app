@@ -66,7 +66,7 @@ def get_grade_view():
 @app.route("/section_info_input.html", methods=["GET", "POST"])
 def get_section_info():
     if request.method == "POST":
-        section_identifier = request.form.get("section_identifier")
+        section_identifier = request.form.post("section_identifier")
         cursor = db.cursor(dictionary=True)
         query = "SELECT * FROM section WHERE section_identifier = %s"
         cursor.execute(query, (section_identifier,))
@@ -86,7 +86,7 @@ def get_section_info():
 @app.route("/prerequisite_info_input.html", methods=["GET", "POST"])
 def get_prerequisite_info():
     if request.method == "POST":
-        course_number = request.form.get("course_number")
+        course_number = request.form.post("course_number")
         cursor = db.cursor(dictionary=True)
         query = "SELECT course_number, prerequisite_number FROM prerequisite WHERE course_number = %s"
         cursor.execute(query, (course_number,))
@@ -106,7 +106,7 @@ def get_prerequisite_info():
 @app.route("/course_input.html", methods=["GET", "POST"])
 def get_course_info():
     if request.method == "POST":
-        course_number = request.form.get("course_number")
+        course_number = request.form.post("course_number")
         cursor = db.cursor(dictionary=True)
         query = "SELECT * FROM course WHERE course_number = %s"
         cursor.execute(query, (course_number,))
