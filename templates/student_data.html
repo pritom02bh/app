@@ -2,39 +2,43 @@
 <html>
 <head>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        body {
+            font-family: Arial, sans-serif;
         }
-
-        th, td {
-            border: 1px solid #b2cfc4;
-            text-align: left;
-            padding: 10px;
-        }
-
-        th {
-            background-color: #b2cfc4;
-        }
-
-        .student-data {
-            text-align: center;
-            margin: 15px;
-        }
-
         h1 {
             text-align: center;
-            color: #333;
+            color: #ff0000;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 810px;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #3d7560;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #2c8c68;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
         }
 
         .footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #333;
+            background-color: #09373a;
             color: white;
             text-align: center;
-            padding: 8px 0;
+            padding: 10px 0;
         }
 
         .home-link {
@@ -42,7 +46,7 @@
             top: 10px;
             right: 10px;
             text-decoration: none;
-            background-color: #333;
+            background-color: #2c8c68;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -50,7 +54,6 @@
             display: flex;
             align-items: center;
         }
-
         .home-link i {
             margin-right: 10px;
             font-size: 24px;
@@ -59,7 +62,7 @@
 </head>
 <body>
     <div class="student-data">
-        <h1>Student Data</h1>
+        <h1>Welcome {{student.name}} </h1>
         <table>
             <tr>
                 <th>Attribute</th>
@@ -81,8 +84,13 @@
                 <td>Major</td>
                 <td>{{ student.major }}</td>
             </tr>
+            <tr>
+                <td>Grade</td>
+                <td>{{ grade_report[0]['grade'] }}</td> 
+            </tr>
         </table>
     </div>
+    <a href="javascript:history.back()" style="display: block; text-align: center; margin-top: 20px; text-decoration: none; background-color: #3d7560; color: #fff; padding: 10px 10px; border-radius: 5px;">Back</a>
     <a class="home-link" href="http://127.0.0.1:5000/">
         <i class="fa fa-home"></i> Home
     </a>

@@ -17,15 +17,15 @@
             }
     
             h1 {
-                color: #333;
+                color: #000000;
                 text-align: center;
             }
     
             form {
-                background-color: #ffffff;
-                border-radius: 20px;
-                padding: 40px;
-                width: 300px;
+                background-color: rgba(111, 149, 59, 0.39);
+                border-radius: 18px;
+                padding: 80px;
+                width: 319px;
                 margin: 0 auto;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
                 animation: fadeIn 1s ease-in-out;
@@ -36,38 +36,38 @@
                     opacity: 0;
                 }
                 to {
-                    opacity: 1;
+                    opacity: 2;
                 }
             }
     
             label {
                 display: block;
                 text-align: left;
-                color: #333;
+                color: #343131;
             }
     
             input[type="text"] {
-                width: 94%;
-                padding: 14px;
-                margin: 16px 0;
-                border: 3px solid #45a049;
-                border-radius: 23px;
+                width: 90%;
+                padding: 12px;
+                margin: 15px 0;
+                border: 3px solid #000000;
+                border-radius: 31px;
             }
     
             input[type="submit"] {
                 background-color: #000000;
                 color: #fff;
                 border: none;
-                border-radius: 13px;
-                padding: 15px 41px;
+                border-radius: 5px;
+                padding: 12px 44px;
                 cursor: pointer;
-                transition: background-color 0.3s, transform 0.3s;
+                transition: background-color 0.2s, transform 0.3s;
                 display: inline-block;
                 width: 102%;
             }
     
             input[type="submit"]:hover {
-                background-color: #45a049;
+                background-color: #05107b;
                 transform: scale(1.05);
             }
     
@@ -132,7 +132,7 @@
     </head>
 <body>
     <form method="POST">
-        <label for="student_number">Enter Student Number:</label>
+        <label for="student_number" style="font-size: 18px; color: #190606; font-weight: bold;">Enter Your Student Number:</label>
         <input type="text" id="student_number" name="student_number" required>
         <input type="submit" value="Get Data">
     </form>

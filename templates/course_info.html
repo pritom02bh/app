@@ -2,43 +2,40 @@
 <html>
 <head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
+
+        th, td {
+            border: 1px solid #2c8c68;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #2c8c68;
+            color:aliceblue
+        }
+
+        .course-data {
+            text-align: center;
+            margin: 15px;
+        }
+
         h1 {
             text-align: center;
-            color: #333;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #333;
-            color: #fff;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(odd) {
-            background-color: #fff;
+            color: #f00f0f;
         }
 
         .footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #333;
+            background-color: #2c8c68;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 8px 0;
         }
 
         .home-link {
@@ -46,14 +43,15 @@
             top: 10px;
             right: 10px;
             text-decoration: none;
-            background-color: #333;
+            background-color: #09373a;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 18px;
             display: flex;
-            align-items: center;
+            align-items: center.
         }
+
         .home-link i {
             margin-right: 10px;
             font-size: 24px;
@@ -61,26 +59,34 @@
     </style>
 </head>
 <body>
-    <div class="prerequisite-data">
-        <h1> Course Information: </h1>
+    <div class="course-data">
+        <h1><h1>All the Information For The Course Number:  {{ course.course_number }}</h1></h1>
         <table>
             <tr>
-                <th>Course Name</th>
-                <th>Course Number</th>
-                <th>Credit Hour</th>
-                <th>Department</th>
+                <th>Attribute</th>
+                <th>Value</th>
             </tr>
-            {% for row in data %}
             <tr>
-                <td>{{ row.course_name }}</td>
-                <td>{{ row.course_number }}</td>
-                <td>{{ row.credit_hours }}</td>
-                <td>{{ row.department }}</td>
+                <td>Course Number</td>
+                <td>{{ course.course_number }}</td>
             </tr>
-            {% endfor %}
+            <tr>
+                <td>Name</td>
+                <td>{{ course.course_name }}</td>
+            </tr>
+            <tr>
+                <td>Credits</td>
+                <td>{{ course.credit_hours }}</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>{{ course.department }}</td>
+            </tr>
+            <tr>
+                <td>Prerequisite</td>
+                <td>{{ prerequisites[0]['prerequisite_number'] if prerequisites else "None" }}</td>
+            </tr>
         </table>
-
-        <a href="javascript:history.back()" style="display: block; text-align: center; margin-top: 20px; text-decoration: none; background-color: #333; color: #fff; padding: 10px 10px; border-radius: 5px;">Back</a>
     </div>
     <a class="home-link" href="http://127.0.0.1:5000/">
         <i class="fa fa-home"></i> Home
@@ -88,6 +94,5 @@
     <div class="footer">
         Developed by Pritom Bhowmik
     </div>
-
 </body>
 </html>

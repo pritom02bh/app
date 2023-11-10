@@ -27,14 +27,24 @@ def get_student_data():
     if request.method == "POST":
         student_number = request.form.get("student_number")
         cursor = db.cursor(dictionary=True)
-        query = "SELECT * FROM student WHERE student_number = %s"
-        cursor.execute(query, (student_number,))
+        
+        # Query to fetch student data
+        student_query = "SELECT * FROM student WHERE student_number = %s"
+        cursor.execute(student_query, (student_number,))
         student = cursor.fetchone()
+
+        # Query to fetch grade report for the student
+        grade_report_query = "SELECT grade FROM grade_report WHERE student_number = %s"
+        cursor.execute(grade_report_query, (student_number,))
+        grade_report = cursor.fetchall()
+
         cursor.close()
-        if student_number:
-            return render_template("student_data.html", student = student)
+
+        if student:
+            return render_template("student_data.html", student=student, grade_report=grade_report)
         else:
             return "Student not found"
+    
     return render_template("student_id.html")
 
 
@@ -108,14 +118,23 @@ def get_course_info():
     if request.method == "POST":
         course_number = request.form.get("course_number")
         cursor = db.cursor(dictionary=True)
-        query = "SELECT * FROM course WHERE course_number = %s"
-        cursor.execute(query, (course_number,))
-        course_data = cursor.fetchall()
+        
+        # Query to fetch course data from course table
+        course_query = "SELECT * FROM course WHERE course_number = %s"
+        cursor.execute(course_query, (course_number,))
+        course = cursor.fetchone()
+        
+         # Query to fetch prerequisite course numbers for the course from prerequisite table
+        prerequisite_query = "SELECT prerequisite_number FROM prerequisite WHERE course_number = %s"
+        cursor.execute(prerequisite_query, (course_number,))
+        prerequisites = cursor.fetchall()
+        
         cursor.close()
-        if course_data:
-            return render_template("course_info.html", data = course_data)
+        
+        if course:
+            return render_template("course_info.html", course=course, prerequisites=prerequisites)
         else:
-            return "No course number has found"
+            return "Course not found"
     return render_template("course_input.html")
 
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
@@ -8,7 +7,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #364251;
             margin: 0;
             padding: 0;
         }
@@ -23,7 +22,7 @@
         .options {
             background-color: #ffffff;
             border-radius: 20px;
-            padding: 40px;
+            padding: 65px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
             animation: fadeIn 1s ease-in-out;
@@ -39,9 +38,34 @@
         }
 
         .options h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #333;
+            font-size: 38px;
+            margin-bottom: 31px;
+            color: #3a119b;
+            font-weight: bold; /* Make the text bold */
+            text-transform: uppercase; /* Uppercase the text */
+            letter-spacing: 1px; /* Add letter spacing */
+            display: flex;
+            align-items: center; /* Center align text and icon */
+        }
+
+        .options h2 i {
+            font-size: 130px; /* Adjust icon size */
+            margin-right: 130px; /* Add right margin for spacing */
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ff8800;
+            transform: scale(1.05);
         }
 
         .options a {
@@ -83,22 +107,20 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="options">
-            <h2>Welcome to the Register's Application</h2>
-            <a href="instructor_id.html" class="btn btn-primary">Instructor View</a>
-            <a href="student_id.html" class="btn btn-primary">Student View</a>
-            <a href="grades.html" class="btn btn-primary">Grade View</a>
-            <a href="section_info_input.html" class="btn btn-primary">Section View</a>
-            <a href="prerequisite_info_input.html" class="btn btn-primary">Prerequisite Subject View</a>
-            <a href="course_input.html" class="btn btn-primary">Course Details View</a>
+            <h2><i class="fas fa-graduation-cap"></i> Welcome to the Register's Application</h2>
+            <a href="instructor_id.html" class="btn btn-success"><i class="fas fa-chalkboard-teacher"></i> Instructor View</a>
+            <a href="student_id.html" class="btn btn-info"><i class="fas fa-user-graduate"></i> Student View</a>
+            <a href="grades.html" class="btn btn-warning"><i class="fas fa-clipboard-check"></i> Grade View</a>
+            <a href="section_info_input.html" class="btn btn-danger"><i class="fas fa-book-open"></i> Section View</a>
+            <a href="prerequisite_info_input.html" class="btn btn-primary"><i class="fas fa-certificate"></i> Prerequisite Subject View</a>
+            <a href="course_input.html" class="btn btn-secondary"><i class="fas fa-book"></i> Course Details View</a>
         </div>
     </div>
     <div class="footer">
         Developed by Pritom Bhowmik
     </div>
 </body>
-
 </html>
