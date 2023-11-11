@@ -20,6 +20,7 @@ mysql = MySQL(app)
 def index():
     return render_template('index.html')
 
+
 # Student View
 
 @app.route("/student_id.html", methods=["GET", "POST"])
@@ -47,7 +48,6 @@ def get_student_data():
     
     return render_template("student_id.html")
 
-
 # End of Student View
 
 
@@ -68,7 +68,6 @@ def get_grade_view():
             return "Student not found"
     return render_template("grades.html")
 
-
 # End of Grade &  view
 
 # Section Part
@@ -88,8 +87,8 @@ def get_section_info():
             return "Section not found"
     return render_template("section_info_input.html")
 
-
 # End of Section Part
+
 
 # Prerequisite Part
 
@@ -110,8 +109,8 @@ def get_prerequisite_info():
 
 # End of Prerequisite
 
-# course Part
 
+# course Part
 
 @app.route("/course_input.html", methods=["GET", "POST"])
 def get_course_info():
@@ -137,10 +136,11 @@ def get_course_info():
             return "Course not found"
     return render_template("course_input.html")
 
-
 # End of course
 
+
 # Instructor View
+
 @app.route('/instructor_id.html', methods=['GET', 'POST'])
 def instructor_id():
     if request.method == 'POST':
